@@ -1,0 +1,20 @@
+/* Generated automatically */
+#ifndef have_Src_compat_globals
+#define have_Src_compat_globals
+
+extern mod_import_function long zpathmax _((char*dir));
+extern mod_import_function long zopenmax _((void));
+extern mod_import_function char*zgetdir _((struct dirsav*d));
+extern char*zgetcwd _((void));
+extern mod_import_function int zchdir _((char*dir));
+#ifdef ZSH_64_BIT_TYPE
+extern mod_import_function char*output64 _((zlong val));
+#endif /* ZSH_64_BIT_TYPE */
+#if defined(BROKEN_WCWIDTH) && (defined(__STDC_ISO_10646__) || defined(__APPLE__))
+extern int mk_wcwidth _((wchar_t ucs));
+#endif /* BROKEN_WCWIDTH && (__STDC_ISO_10646__ || __APPLE__) */
+#if defined(__APPLE__) && defined(BROKEN_ISPRINT)
+extern int isprint_ascii _((int c));
+#endif /* __APPLE__ && BROKEN_ISPRINT */
+
+#endif /* !have_Src_compat_globals */

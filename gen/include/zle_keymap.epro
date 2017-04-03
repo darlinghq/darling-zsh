@@ -1,0 +1,32 @@
+/* Generated automatically */
+#ifndef have_Src_Zle_zle_keymap_globals
+#define have_Src_Zle_zle_keymap_globals
+
+extern Keymap curkeymap;
+extern Keymap localkeymap;
+extern char*curkeymapname;
+extern mod_import_variable HashTable keymapnamtab;
+extern char*keybuf;
+extern mod_import_function Keymap newkeymap _((Keymap tocopy,char*kmname));
+extern void deletekeymap _((Keymap km));
+extern void scankeymap _((Keymap km,int sort,KeyScanFunc func,void*magic));
+extern Keymap openkeymap _((char*name));
+extern mod_import_function int unlinkkeymap _((char*name,int ignm));
+extern mod_import_function int linkkeymap _((Keymap km,char*name,int imm));
+extern void refkeymap _((Keymap km));
+extern int unrefkeymap _((Keymap km));
+extern int selectkeymap _((char*name,int fb));
+extern mod_import_function void selectlocalmap _((Keymap m));
+extern void reselectkeymap _((void));
+extern mod_import_function int bindkey _((Keymap km,const char*seq,Thingy bind,char*str));
+extern Thingy keybind _((Keymap km,char*seq,char**strp));
+extern int bin_bindkey _((char*name,char**argv,Options ops,UNUSED(int func)));
+extern void init_keymaps _((void));
+extern void cleanup_keymaps _((void));
+extern char*getkeymapcmd _((Keymap km,Thingy*funcp,char**strp));
+extern mod_import_function void ungetkeycmd _((void));
+extern mod_import_function Thingy getkeycmd _((void));
+extern mod_import_function void zlesetkeymap _((int mode));
+extern mod_import_function int readcommand _((UNUSED(char**args)));
+
+#endif /* !have_Src_Zle_zle_keymap_globals */

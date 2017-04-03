@@ -1,0 +1,29 @@
+/* Generated automatically */
+#ifndef have_Src_Zle_compmatch_globals
+#define have_Src_Zle_compmatch_globals
+
+extern mod_import_function void add_bmatchers _((Cmatcher m));
+extern mod_import_function void update_bmatchers _((void));
+extern Cline get_cline _((char*l,int ll,char*w,int wl,char*o,int ol,int fl));
+extern void free_cline _((Cline l));
+extern Cline cp_cline _((Cline l,int deep));
+extern int cline_sublen _((Cline l));
+extern void cline_setlens _((Cline l,int both));
+extern void cline_matched _((Cline p));
+extern Cline revert_cline _((Cline p));
+extern char*matchbuf;
+extern int matchbuflen;
+extern int matchbufadded;
+extern Cline matchparts;
+extern Cline matchlastpart;
+extern Cline matchsubs;
+extern Cline matchlastsub;
+extern int match_str _((char*l,char*w,Brinfo*bpp,int bc,int*rwlp,int sfx,int test,int part));
+extern mod_import_function char*comp_match _((char*pfx,char*sfx,char*w,Patprog cp,Cline*clp,int qu,Brinfo*bpl,int bcp,Brinfo*bsl,int bcs,int*exact));
+extern mod_import_function convchar_t pattern_match1 _((Cpattern p,convchar_t c,int*mtp));
+extern mod_import_function convchar_t pattern_match_equivalence _((Cpattern lp,convchar_t wind,int wmtp,convchar_t wchr));
+extern mod_import_function int pattern_match _((Cpattern p,char*s,Cpattern wp,char*ws));
+extern Cline bld_parts _((char*str,int len,int plen,Cline*lp,Cline*lprem));
+extern Cline join_clines _((Cline o,Cline n));
+
+#endif /* !have_Src_Zle_compmatch_globals */

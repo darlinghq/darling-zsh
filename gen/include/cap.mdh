@@ -1,0 +1,37 @@
+#ifndef have_zshQscap_module
+#define have_zshQscap_module
+
+# ifndef IMPORTING_MODULE_zshQscap
+#  ifndef MODULE
+#   define boot_ boot_zshQscap
+#   define cleanup_ cleanup_zshQscap
+#   define features_ features_zshQscap
+#   define enables_ enables_zshQscap
+#   define setup_ setup_zshQscap
+#   define finish_ finish_zshQscap
+#  endif /* !MODULE */
+# endif /* !IMPORTING_MODULE_zshQscap */
+
+/* Module dependencies */
+# define IMPORTING_MODULE_zshQsmain 1
+# include "../../Src/zsh.mdh"
+
+# undef mod_import_variable
+# undef mod_import_function
+# if defined(IMPORTING_MODULE_zshQscap) &&  defined(MODULE)
+#  define mod_import_variable 
+#  define mod_import_function 
+# else
+#  define mod_import_function
+#  define mod_import_variable
+# endif /* IMPORTING_MODULE_zshQscap && MODULE */
+# include "cap.epro"
+# undef mod_import_variable
+# define mod_import_variable
+# undef mod_import_variable
+# define mod_import_variable
+# ifndef mod_export
+#  define mod_export 
+# endif /* mod_export */
+
+#endif /* !have_zshQscap_module */
