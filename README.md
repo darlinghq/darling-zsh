@@ -1,2 +1,2 @@
 # darling-zsh
-zsh-70
+zsh-84
