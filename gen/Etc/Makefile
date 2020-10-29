@@ -105,7 +105,7 @@ ZSH_TERM_H = term.h
 tzsh            = zsh
 
 # installation directories
-prefix          = /usr/local
+prefix          = /usr
 exec_prefix     = ${prefix}
 bindir          = /bin
 libdir          = ${exec_prefix}/lib
@@ -115,7 +115,7 @@ mandir          = ${datarootdir}/man
 datarootdir     = ${prefix}/share
 datadir         = ${datarootdir}
 fndir           = ${datarootdir}/zsh/${VERSION}/functions
-fixed_sitefndir = 
+fixed_sitefndir = /usr/local/share/zsh/site-functions
 sitefndir       = ${datarootdir}/zsh/site-functions
 scriptdir       = ${datarootdir}/zsh/${VERSION}/scripts
 sitescriptdir   = ${datarootdir}/zsh/scripts
@@ -126,7 +126,7 @@ runhelp         = runhelp
 # compilation
 CC              = /Users/ariel/private-bin/clang
 CPP             = /Users/ariel/private-bin/clang -E
-CPPFLAGS        = -isystem/Users/ariel/git/darling/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -isystem/Users/ariel/arch/build/darling/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -isystem/Users/ariel/git/darling/framework-include -DDARLING -DUSE_GETCWD
+CPPFLAGS        = -isystem/Users/ariel/git/darling/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -isystem/Users/ariel/guest/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include -isystem/Users/ariel/git/darling/framework-include -DDARLING -DUSE_GETCWD
 DEFS            = -DHAVE_CONFIG_H
 CFLAGS          = -arch x86_64 -arch i386 -no-cpp-precomp
 LDFLAGS         = -Wl,-x
