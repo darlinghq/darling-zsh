@@ -393,4 +393,11 @@ endforeach()
 
 install(DIRECTORY DESTINATION "libexec/darling/usr/share/zsh/5.7.1/scripts")
 
-# TODO: install functions
+install(DIRECTORY "gen/install-this/" DESTINATION "libexec/darling")
+
+install(FILES
+	zprofile
+	zshrc
+
+	DESTINATION "libexec/darling/private/etc"
+)
