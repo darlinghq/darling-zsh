@@ -1,5 +1,0 @@
-#compdef zf_rmdir dircmp -P -value-,*path,-default-
-
-local expl
-
-_wanted directories expl directory _files -/ "$@" -
