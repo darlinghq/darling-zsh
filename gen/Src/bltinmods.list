@@ -1,0 +1,411 @@
+/* linked-in known module `zsh/main' */
+/* linked-in known module `zsh/rlimits' */
+  {
+    char *zsh_features[] = { 
+      "b:limit",
+      "b:ulimit",
+      "b:unlimit",
+      NULL
+    }; 
+    char *emu_features[] = { 
+      "b:ulimit",
+      NULL
+    }; 
+    autofeatures("zsh", "zsh/rlimits",
+       EMULATION(EMULATE_ZSH) ? zsh_features : emu_features,
+       0, 1);
+  }
+/* linked-in known module `zsh/sched' */
+  if (EMULATION(EMULATE_ZSH)) {
+    char *features[] = { 
+      "b:sched",
+      "p:zsh_scheduled_events",
+      NULL
+    }; 
+    autofeatures("zsh", "zsh/sched", features, 0, 1);
+  }
+/* linked-in known module `zsh/parameter' */
+  if (EMULATION(EMULATE_ZSH)) {
+    char *features[] = { 
+      "p:parameters",
+      "p:commands",
+      "p:functions",
+      "p:dis_functions",
+      "p:functions_source",
+      "p:dis_functions_source",
+      "p:funcfiletrace",
+      "p:funcsourcetrace",
+      "p:funcstack",
+      "p:functrace",
+      "p:builtins",
+      "p:dis_builtins",
+      "p:reswords",
+      "p:dis_reswords",
+      "p:patchars",
+      "p:dis_patchars",
+      "p:options",
+      "p:modules",
+      "p:dirstack",
+      "p:history",
+      "p:historywords",
+      "p:jobtexts",
+      "p:jobdirs",
+      "p:jobstates",
+      "p:nameddirs",
+      "p:userdirs",
+      "p:usergroups",
+      "p:aliases",
+      "p:dis_aliases",
+      "p:galiases",
+      "p:dis_galiases",
+      "p:saliases",
+      "p:dis_saliases",
+      NULL
+    }; 
+    autofeatures("zsh", "zsh/parameter", features, 0, 1);
+  }
+/* linked-in known module `zsh/termcap' */
+  if (EMULATION(EMULATE_ZSH)) {
+    char *features[] = { 
+      "b:echotc",
+      "p:termcap",
+      NULL
+    }; 
+    autofeatures("zsh", "zsh/termcap", features, 0, 1);
+  }
+/* linked-in known module `zsh/terminfo' */
+  if (EMULATION(EMULATE_ZSH)) {
+    char *features[] = { 
+      "b:echoti",
+      "p:terminfo",
+      NULL
+    }; 
+    autofeatures("zsh", "zsh/terminfo", features, 0, 1);
+  }
+/* linked-in known module `zsh/zutil' */
+  if (EMULATION(EMULATE_ZSH)) {
+    char *features[] = { 
+      "b:zformat",
+      "b:zstyle",
+      "b:zregexparse",
+      "b:zparseopts",
+      NULL
+    }; 
+    autofeatures("zsh", "zsh/zutil", features, 0, 1);
+  }
+  add_dep("zsh/zutil", "zsh/complete");
+/* linked-in known module `zsh/compctl' */
+  if (EMULATION(EMULATE_ZSH)) {
+    char *features[] = { 
+      "b:compctl",
+      "b:compcall",
+      NULL
+    }; 
+    autofeatures("zsh", "zsh/compctl", features, 0, 1);
+  }
+  add_dep("zsh/compctl", "zsh/complete");
+  add_dep("zsh/compctl", "zsh/zle");
+/* linked-in known module `zsh/complete' */
+  if (EMULATION(EMULATE_ZSH)) {
+    char *features[] = { 
+      "b:compadd",
+      "b:compset",
+      "c:prefix",
+      "c:suffix",
+      "c:between",
+      "c:after",
+      NULL
+    }; 
+    autofeatures("zsh", "zsh/complete", features, 0, 1);
+  }
+  add_dep("zsh/complete", "zsh/zle");
+/* linked-in known module `zsh/complist' */
+  add_dep("zsh/complist", "zsh/complete");
+  add_dep("zsh/complist", "zsh/zle");
+/* linked-in known module `zsh/computil' */
+  if (EMULATION(EMULATE_ZSH)) {
+    char *features[] = { 
+      "b:compdescribe",
+      "b:comparguments",
+      "b:compvalues",
+      "b:compquote",
+      "b:comptags",
+      "b:comptry",
+      "b:compfiles",
+      "b:compgroups",
+      NULL
+    }; 
+    autofeatures("zsh", "zsh/computil", features, 0, 1);
+  }
+  add_dep("zsh/computil", "zsh/complete");
+  add_dep("zsh/computil", "zsh/zle");
+/* linked-in known module `zsh/zle' */
+  if (EMULATION(EMULATE_ZSH)) {
+    char *features[] = { 
+      "b:bindkey",
+      "b:vared",
+      "b:zle",
+      NULL
+    }; 
+    autofeatures("zsh", "zsh/zle", features, 0, 1);
+  }
+/* linked-in known module `zsh/zleparameter' */
+  if (EMULATION(EMULATE_ZSH)) {
+    char *features[] = { 
+      "p:widgets",
+      "p:keymaps",
+      NULL
+    }; 
+    autofeatures("zsh", "zsh/zleparameter", features, 0, 1);
+  }
+  add_dep("zsh/zleparameter", "zsh/zle");
+
+/* linked-in module `zsh/main' */
+    {
+        extern int setup_zshQsmain _((Module));
+        extern int boot_zshQsmain _((Module));
+        extern int features_zshQsmain _((Module,char***));
+        extern int enables_zshQsmain _((Module,int**));
+        extern int cleanup_zshQsmain _((Module));
+        extern int finish_zshQsmain _((Module));
+
+        register_module("zsh/main",
+                        setup_zshQsmain,
+                        features_zshQsmain,
+                        enables_zshQsmain,
+                        boot_zshQsmain,
+                        cleanup_zshQsmain, finish_zshQsmain);
+    }
+/* linked-in module `zsh/rlimits' */
+    {
+        extern int setup_zshQsrlimits _((Module));
+        extern int boot_zshQsrlimits _((Module));
+        extern int features_zshQsrlimits _((Module,char***));
+        extern int enables_zshQsrlimits _((Module,int**));
+        extern int cleanup_zshQsrlimits _((Module));
+        extern int finish_zshQsrlimits _((Module));
+
+        register_module("zsh/rlimits",
+                        setup_zshQsrlimits,
+                        features_zshQsrlimits,
+                        enables_zshQsrlimits,
+                        boot_zshQsrlimits,
+                        cleanup_zshQsrlimits, finish_zshQsrlimits);
+    }
+/* linked-in module `zsh/sched' */
+    {
+        extern int setup_zshQssched _((Module));
+        extern int boot_zshQssched _((Module));
+        extern int features_zshQssched _((Module,char***));
+        extern int enables_zshQssched _((Module,int**));
+        extern int cleanup_zshQssched _((Module));
+        extern int finish_zshQssched _((Module));
+
+        register_module("zsh/sched",
+                        setup_zshQssched,
+                        features_zshQssched,
+                        enables_zshQssched,
+                        boot_zshQssched,
+                        cleanup_zshQssched, finish_zshQssched);
+    }
+/* linked-in module `zsh/datetime' */
+    {
+        extern int setup_zshQsdatetime _((Module));
+        extern int boot_zshQsdatetime _((Module));
+        extern int features_zshQsdatetime _((Module,char***));
+        extern int enables_zshQsdatetime _((Module,int**));
+        extern int cleanup_zshQsdatetime _((Module));
+        extern int finish_zshQsdatetime _((Module));
+
+        register_module("zsh/datetime",
+                        setup_zshQsdatetime,
+                        features_zshQsdatetime,
+                        enables_zshQsdatetime,
+                        boot_zshQsdatetime,
+                        cleanup_zshQsdatetime, finish_zshQsdatetime);
+    }
+/* linked-in module `zsh/langinfo' */
+    {
+        extern int setup_zshQslanginfo _((Module));
+        extern int boot_zshQslanginfo _((Module));
+        extern int features_zshQslanginfo _((Module,char***));
+        extern int enables_zshQslanginfo _((Module,int**));
+        extern int cleanup_zshQslanginfo _((Module));
+        extern int finish_zshQslanginfo _((Module));
+
+        register_module("zsh/langinfo",
+                        setup_zshQslanginfo,
+                        features_zshQslanginfo,
+                        enables_zshQslanginfo,
+                        boot_zshQslanginfo,
+                        cleanup_zshQslanginfo, finish_zshQslanginfo);
+    }
+/* linked-in module `zsh/parameter' */
+    {
+        extern int setup_zshQsparameter _((Module));
+        extern int boot_zshQsparameter _((Module));
+        extern int features_zshQsparameter _((Module,char***));
+        extern int enables_zshQsparameter _((Module,int**));
+        extern int cleanup_zshQsparameter _((Module));
+        extern int finish_zshQsparameter _((Module));
+
+        register_module("zsh/parameter",
+                        setup_zshQsparameter,
+                        features_zshQsparameter,
+                        enables_zshQsparameter,
+                        boot_zshQsparameter,
+                        cleanup_zshQsparameter, finish_zshQsparameter);
+    }
+/* linked-in module `zsh/termcap' */
+    {
+        extern int setup_zshQstermcap _((Module));
+        extern int boot_zshQstermcap _((Module));
+        extern int features_zshQstermcap _((Module,char***));
+        extern int enables_zshQstermcap _((Module,int**));
+        extern int cleanup_zshQstermcap _((Module));
+        extern int finish_zshQstermcap _((Module));
+
+        register_module("zsh/termcap",
+                        setup_zshQstermcap,
+                        features_zshQstermcap,
+                        enables_zshQstermcap,
+                        boot_zshQstermcap,
+                        cleanup_zshQstermcap, finish_zshQstermcap);
+    }
+/* linked-in module `zsh/terminfo' */
+    {
+        extern int setup_zshQsterminfo _((Module));
+        extern int boot_zshQsterminfo _((Module));
+        extern int features_zshQsterminfo _((Module,char***));
+        extern int enables_zshQsterminfo _((Module,int**));
+        extern int cleanup_zshQsterminfo _((Module));
+        extern int finish_zshQsterminfo _((Module));
+
+        register_module("zsh/terminfo",
+                        setup_zshQsterminfo,
+                        features_zshQsterminfo,
+                        enables_zshQsterminfo,
+                        boot_zshQsterminfo,
+                        cleanup_zshQsterminfo, finish_zshQsterminfo);
+    }
+/* linked-in module `zsh/zutil' */
+    /* depends on `zsh/complete' */
+    {
+        extern int setup_zshQszutil _((Module));
+        extern int boot_zshQszutil _((Module));
+        extern int features_zshQszutil _((Module,char***));
+        extern int enables_zshQszutil _((Module,int**));
+        extern int cleanup_zshQszutil _((Module));
+        extern int finish_zshQszutil _((Module));
+
+        register_module("zsh/zutil",
+                        setup_zshQszutil,
+                        features_zshQszutil,
+                        enables_zshQszutil,
+                        boot_zshQszutil,
+                        cleanup_zshQszutil, finish_zshQszutil);
+    }
+/* linked-in module `zsh/compctl' */
+    /* depends on `zsh/complete' */
+    /* depends on `zsh/zle' */
+    {
+        extern int setup_zshQscompctl _((Module));
+        extern int boot_zshQscompctl _((Module));
+        extern int features_zshQscompctl _((Module,char***));
+        extern int enables_zshQscompctl _((Module,int**));
+        extern int cleanup_zshQscompctl _((Module));
+        extern int finish_zshQscompctl _((Module));
+
+        register_module("zsh/compctl",
+                        setup_zshQscompctl,
+                        features_zshQscompctl,
+                        enables_zshQscompctl,
+                        boot_zshQscompctl,
+                        cleanup_zshQscompctl, finish_zshQscompctl);
+    }
+/* linked-in module `zsh/complete' */
+    /* depends on `zsh/zle' */
+    {
+        extern int setup_zshQscomplete _((Module));
+        extern int boot_zshQscomplete _((Module));
+        extern int features_zshQscomplete _((Module,char***));
+        extern int enables_zshQscomplete _((Module,int**));
+        extern int cleanup_zshQscomplete _((Module));
+        extern int finish_zshQscomplete _((Module));
+
+        register_module("zsh/complete",
+                        setup_zshQscomplete,
+                        features_zshQscomplete,
+                        enables_zshQscomplete,
+                        boot_zshQscomplete,
+                        cleanup_zshQscomplete, finish_zshQscomplete);
+    }
+/* linked-in module `zsh/complist' */
+    /* depends on `zsh/complete' */
+    /* depends on `zsh/zle' */
+    {
+        extern int setup_zshQscomplist _((Module));
+        extern int boot_zshQscomplist _((Module));
+        extern int features_zshQscomplist _((Module,char***));
+        extern int enables_zshQscomplist _((Module,int**));
+        extern int cleanup_zshQscomplist _((Module));
+        extern int finish_zshQscomplist _((Module));
+
+        register_module("zsh/complist",
+                        setup_zshQscomplist,
+                        features_zshQscomplist,
+                        enables_zshQscomplist,
+                        boot_zshQscomplist,
+                        cleanup_zshQscomplist, finish_zshQscomplist);
+    }
+/* linked-in module `zsh/computil' */
+    /* depends on `zsh/complete' */
+    /* depends on `zsh/zle' */
+    {
+        extern int setup_zshQscomputil _((Module));
+        extern int boot_zshQscomputil _((Module));
+        extern int features_zshQscomputil _((Module,char***));
+        extern int enables_zshQscomputil _((Module,int**));
+        extern int cleanup_zshQscomputil _((Module));
+        extern int finish_zshQscomputil _((Module));
+
+        register_module("zsh/computil",
+                        setup_zshQscomputil,
+                        features_zshQscomputil,
+                        enables_zshQscomputil,
+                        boot_zshQscomputil,
+                        cleanup_zshQscomputil, finish_zshQscomputil);
+    }
+/* linked-in module `zsh/zle' */
+    {
+        extern int setup_zshQszle _((Module));
+        extern int boot_zshQszle _((Module));
+        extern int features_zshQszle _((Module,char***));
+        extern int enables_zshQszle _((Module,int**));
+        extern int cleanup_zshQszle _((Module));
+        extern int finish_zshQszle _((Module));
+
+        register_module("zsh/zle",
+                        setup_zshQszle,
+                        features_zshQszle,
+                        enables_zshQszle,
+                        boot_zshQszle,
+                        cleanup_zshQszle, finish_zshQszle);
+    }
+/* linked-in module `zsh/zleparameter' */
+    /* depends on `zsh/zle' */
+    {
+        extern int setup_zshQszleparameter _((Module));
+        extern int boot_zshQszleparameter _((Module));
+        extern int features_zshQszleparameter _((Module,char***));
+        extern int enables_zshQszleparameter _((Module,int**));
+        extern int cleanup_zshQszleparameter _((Module));
+        extern int finish_zshQszleparameter _((Module));
+
+        register_module("zsh/zleparameter",
+                        setup_zshQszleparameter,
+                        features_zshQszleparameter,
+                        enables_zshQszleparameter,
+                        boot_zshQszleparameter,
+                        cleanup_zshQszleparameter, finish_zshQszleparameter);
+    }

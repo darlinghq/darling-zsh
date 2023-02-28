@@ -1,0 +1,15 @@
+ builtin.o compat.o cond.o context.o exec.o glob.o hashtable.o hashnameddir.o hist.o init.o input.o jobs.o lex.o linklist.o loop.o math.o mem.o module.o options.o params.o parse.o pattern.o prompt.o signals.o signames.o sort.o string.o subst.o text.o utils.o watch.o openssh_bsd_setres_id.o
+ Builtins/rlimits.o
+ Builtins/sched.o
+ Modules/datetime.o
+ Modules/langinfo.o
+ Modules/parameter.o
+ Modules/termcap.o
+ Modules/terminfo.o
+ Modules/zutil.o
+ Zle/compctl.o
+ Zle/complete.o Zle/compcore.o Zle/compmatch.o Zle/compresult.o
+ Zle/complist.o
+ Zle/computil.o
+ Zle/zle_bindings.o Zle/zle_hist.o Zle/zle_keymap.o Zle/zle_main.o Zle/zle_misc.o Zle/zle_move.o Zle/zle_params.o Zle/zle_refresh.o Zle/zle_thingy.o Zle/zle_tricky.o Zle/zle_utils.o Zle/zle_vi.o Zle/zle_word.o Zle/textobjects.o
+ Zle/zleparameter.o
