@@ -122,45 +122,45 @@ add_zsh_module(sched SOURCES
 # loadable modules
 #
 
-add_zsh_module(attr SOURCES
-	zsh/Src/Modules/attr.c
-)
+# add_zsh_module(attr SOURCES
+# 	zsh/Src/Modules/attr.c
+# )
 
-add_zsh_module(cap SOURCES
-	zsh/Src/Modules/cap.c
-)
+# add_zsh_module(cap SOURCES
+# 	zsh/Src/Modules/cap.c
+# )
 
-add_zsh_module(clone SOURCES
-	zsh/Src/Modules/clone.c
-)
+# add_zsh_module(clone SOURCES
+# 	zsh/Src/Modules/clone.c
+# )
 
-add_zsh_module(curses SOURCES
-	zsh/Src/Modules/curses.c
-)
+# add_zsh_module(curses SOURCES
+# 	zsh/Src/Modules/curses.c
+# )
 
 add_zsh_module(datetime SOURCES
 	zsh/Src/Modules/datetime.c
 )
 
-add_zsh_module(example SOURCES
-	zsh/Src/Modules/example.c
-)
+# add_zsh_module(example SOURCES
+# 	zsh/Src/Modules/example.c
+# )
 
-add_zsh_module(files SOURCES
-	zsh/Src/Modules/files.c
-)
+# add_zsh_module(files SOURCES
+# 	zsh/Src/Modules/files.c
+# )
 
 add_zsh_module(langinfo SOURCES
 	zsh/Src/Modules/langinfo.c
 )
 
-add_zsh_module(mapfile SOURCES
-	zsh/Src/Modules/mapfile.c
-)
+# add_zsh_module(mapfile SOURCES
+# 	zsh/Src/Modules/mapfile.c
+# )
 
-add_zsh_module(mathfunc SOURCES
-	zsh/Src/Modules/mathfunc.c
-)
+# add_zsh_module(mathfunc SOURCES
+# 	zsh/Src/Modules/mathfunc.c
+# )
 
 add_zsh_module(nearcolor SOURCES
 	zsh/Src/Modules/nearcolor.c
@@ -198,7 +198,7 @@ add_zsh_module(stat SOURCES
 
 add_zsh_module(system SOURCES
 	zsh/Src/Modules/system.c
-	gen/Src/Modules/errnames.c
+	# gen/Src/Modules/errnames.c
 )
 
 add_zsh_module(tcp SOURCES
@@ -288,27 +288,27 @@ add_zsh_module(zleparameter SOURCES
 install(TARGETS zsh DESTINATION libexec/darling/bin)
 
 install(FILES
-	gen/Doc/zsh.1
-	gen/Doc/zshall.1
-	gen/Doc/zshbuiltins.1
-	gen/Doc/zshcompctl.1
-	gen/Doc/zshcompsys.1
-	gen/Doc/zshcompwid.1
-	gen/Doc/zshcontrib.1
-	gen/Doc/zshexpn.1
-	gen/Doc/zshmisc.1
-	gen/Doc/zshmodules.1
-	gen/Doc/zshoptions.1
-	gen/Doc/zshparam.1
-	gen/Doc/zshroadmap.1
-	gen/Doc/zshtcpsys.1
-	gen/Doc/zshzftpsys.1
-	gen/Doc/zshzle.1
+	zsh/Doc/zsh.1
+	zsh/Doc/zshall.1
+	zsh/Doc/zshbuiltins.1
+	zsh/Doc/zshcompctl.1
+	zsh/Doc/zshcompsys.1
+	zsh/Doc/zshcompwid.1
+	zsh/Doc/zshcontrib.1
+	zsh/Doc/zshexpn.1
+	zsh/Doc/zshmisc.1
+	zsh/Doc/zshmodules.1
+	zsh/Doc/zshoptions.1
+	zsh/Doc/zshparam.1
+	zsh/Doc/zshroadmap.1
+	zsh/Doc/zshtcpsys.1
+	zsh/Doc/zshzftpsys.1
+	zsh/Doc/zshzle.1
 
 	DESTINATION libexec/darling/usr/share/man/man1
 )
 
-set(ZSH_MODULE_DIR "libexec/darling/usr/lib/zsh/5.7.1/zsh")
+set(ZSH_MODULE_DIR "libexec/darling/usr/lib/zsh/5.8/zsh")
 
 install(
 	TARGETS
@@ -319,16 +319,16 @@ install(
 
 install(
 	TARGETS
-		zmod_attr
-		zmod_cap
-		zmod_clone
-		zmod_curses
+		# zmod_attr
+		# zmod_cap
+		# zmod_clone
+		# zmod_curses
 		zmod_datetime
-		zmod_example
-		zmod_files
+		# zmod_example
+		# zmod_files
 		zmod_langinfo
-		zmod_mapfile
-		zmod_mathfunc
+		# zmod_mapfile
+		# zmod_mathfunc
 		zmod_nearcolor
 		zmod_newuser
 		zmod_parameter
