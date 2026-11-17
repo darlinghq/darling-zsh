@@ -63,6 +63,18 @@ fi
 [[ -n ${key[Delete]} ]] && bindkey "${key[Delete]}" delete-char
 [[ -n ${key[Home]} ]] && bindkey "${key[Home]}" beginning-of-line
 [[ -n ${key[End]} ]] && bindkey "${key[End]}" end-of-line
+
+# QUIRK: also bind Home and End as sent by terminals in normal (non-application)
+# keypad mode. On macOS the bindings above exist only for the terminfo codes
+# (ESC O H, ESC O F), which are sent only after the terminal is switched to
+# application mode; nothing does that, so on terminals that send ESC [ H and
+# ESC [ F (xterm-style, e.g. Konsole, GNOME Terminal, kitty) both keys just beep.
+# Evidence: tier 2, black-box observation of "zsh -i" on macOS Tahoe, where Home
+# and End beep and "bindkey" lists only ^[OH; reproduced under Darling with the
+# same bindings. Deliberate compatibility extension approved by the maintainer.
+# Test: tests/zsh-home-end.sh (test_quirk_home_end_normal_keypad_mode)
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 [[ -n ${key[Up]} ]] && bindkey "${key[Up]}" up-line-or-search
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 
